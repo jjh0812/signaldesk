@@ -1,0 +1,61 @@
+# Credentials / local identity settings
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+sec_contact.json
+
+# Python / JavaScript dependencies and build products
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.next/
+out/
+dist/
+coverage/
+.coverage
+
+# User research, snapshots, databases, updater backups
+.cache/
+.backups/
+logs/
+uploads/
+exports/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+*.tmp
+*.bak
+*.lock.tmp
+.signaldesk-step*.lock
+
+# Do not publish delivery archives or personal recordings
+*.zip
+!backend/app/_vendor/pypdf_5_9_0.zip
+*.7z
+*.tar
+*.gz
+*.mp4
+*.mov
+*.webm
+
+# Local workspaces / notes / OS files
+.vscode/
+.idea/
+PUBLICATION_REVIEW.txt
+.DS_Store
+Thumbs.db
+Desktop.ini

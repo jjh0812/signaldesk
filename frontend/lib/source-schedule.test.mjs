@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {matchingSourceLedger,visibleSourceCandidates,sourceDateLabel,reportLinkState} from './source-schedule.mjs';
+const item={id:'x',category:'EARNINGS',title:'실적 발표',event_date_candidate:'2026-11-17',year_basis:'CONTEXT_YEAR_CANDIDATE',horizon_state:'UPCOMING',days_to_candidate:68};
+const ledger={version:'source-schedule-0.6.2',symbol:'NVDA',candidates:[item]};
+test('symbol identity is checked',()=>{assert.equal(matchingSourceLedger(ledger,'MSFT'),null);assert.equal(matchingSourceLedger(ledger,'NVDA'),ledger)});
+test('90-day source candidates separate from 30 days',()=>{assert.equal(visibleSourceCandidates(ledger,90).length,1);assert.equal(visibleSourceCandidates(ledger,30).length,0)});
+test('past candidate never included as upcoming',()=>{assert.equal(visibleSourceCandidates({candidates:[{...item,horizon_state:'PAST',days_to_candidate:-1}]},180).length,0)});
+test('year inference is prominently labelled',()=>{assert.match(sourceDateLabel(item),/연도 문맥 추정/);assert.doesNotMatch(sourceDateLabel(item),/확정/)});
+test('explicit year is not called independent confirmation',()=>{assert.match(sourceDateLabel({...item,year_basis:'EXPLICIT_IN_SENTENCE'}),/원문 날짜/);assert.doesNotMatch(sourceDateLabel({...item,year_basis:'EXPLICIT_IN_SENTENCE'}),/확정/)});
+test('unresolved year remains unknown',()=>{const x={...item,event_date_candidate:null,month_day_text:'November 17',horizon_state:'UNDATED'};assert.match(sourceDateLabel(x),/연도 미확인/);assert.equal(visibleSourceCandidates({candidates:[x]},'unknown').length,1)});
+test('dividend-only AI report cannot erase earnings candidate',()=>{assert.match(reportLinkState(item,{items:[{category:'CORPORATE_ACTION',event_date:'2026-10-01'}]}),/실적 카드 없음/);assert.equal(visibleSourceCandidates(ledger,90).length,1)});
+test('wrong earnings date requires review',()=>{assert.match(reportLinkState(item,{items:[{category:'EARNINGS',event_date:'2026-11-20'}]}),/다름/)});
+test('no AI report still has source candidates',()=>{assert.match(reportLinkState(item,null),/AI 보고서 없음/);assert.equal(visibleSourceCandidates(ledger,90).length,1)});
+test('undated AI report is not promoted',()=>{assert.match(reportLinkState(item,{items:[{category:'EARNINGS',event_date:null}]}),/날짜 미정/)});
+test('same date join does not claim fact verification',()=>{assert.match(reportLinkState(item,{items:[{category:'EARNINGS',event_date:'2026-11-17'}]}),/독립 검증 아님/)});

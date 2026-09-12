@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {eventImpact,initialImpact} from './decision.mjs';
+const entry={id:'local-example',title:'Earnings call',category:'EARNINGS'};
+const value={event_id:entry.id,event_title:entry.title,direction:'WAITING',importance:'HIGH',analysis_origin:'RULE_BASED_SCHEDULE_NOT_NEW_AI'};
+test('reviewed schedule is labeled as type rule, not a newly generated AI insight',()=>{const r=eventImpact(entry,{symbol:'EXM',events:[value]},'EXM');assert.match(r.kind,/새 AI 해석 아님/);assert.equal(r.direction,'WAITING');});
+test('unreviewed context and wrong symbol never leak cross-company insights',()=>{assert.match(eventImpact(entry,{symbol:'OTHER',events:[value]},'EXM').kind,/유형 기준/);});
+test('missing AI source coverage leaves type fallback, not favorable result',()=>{const r=eventImpact(entry,{symbol:'EXM',events:[]},'EXM');assert.equal(r.direction,'WAITING');assert.match(r.kind,/새 AI 분석 아님/);});
+test('existing non-rule AI results retain AI label until guarded server response',()=>{const x={...value};delete x.analysis_origin;assert.match(eventImpact(entry,{symbol:'EXM',events:[x]},'EXM').kind,/AI 해석/);});
+test('unknown event is insufficient rather than low or positive',()=>{assert.equal(initialImpact('OTHER').direction,'INSUFFICIENT');assert.equal(initialImpact('OTHER').importance,'INSUFFICIENT');});

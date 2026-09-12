@@ -1,0 +1,200 @@
+{
+  "version": "document-reader-0.6.1",
+  "symbol": "NVDA",
+  "generated_at": "2026-09-10T05:43:37.209830+00:00",
+  "api_calls": 0,
+  "document_requests_planned": 3,
+  "documents": [
+    {
+      "document_id": "d1",
+      "requested_url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "source_role_claim": "ISSUER",
+      "published_date_claim": "2026-08-26",
+      "source_classification_verified": false,
+      "status": "TEXT_EXTRACTED",
+      "url": "https://s201.q4cdn.com/141608511/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "sha256": "a8be2bac4fd08ca18fc4bccbb165cd48237166ac5b4e211e779fc9f89ee35e16",
+      "mime": "application/pdf",
+      "pages_total": 16,
+      "pages_extracted": 16,
+      "text_truncated": false,
+      "header_text": " Corrected Transcript 1-877-FACTSET www.callstreet.com Total Pages: 16 Copyright © 2001-2026 FactSet CallStreet, LLC 26-Aug -2026 NVIDIA Corp. (NVDA ) Q2 2027 Earnings Call ",
+      "passages": [
+        {
+          "page": 15,
+          "start": 2976,
+          "text": "...................................... Toshiya Hari Vice President-Investor Relations & Strategic Finance, NVIDIA Corp. Thank you. Before we close, please note that Jensen will be participating in a keynote fireside chat at the Goldman Sachs Communacopia & Technology Conference in San Francisco on September 10. He'll also be giving a keynote at GTC Berlin on October 21. Our earnings call to discuss the results of our third quarter of fiscal 2027 is scheduled for November 17. Thank you for joining us today. Operator, please close the call. .........................................................................................................",
+          "dates": [
+            {
+              "text": "September 10",
+              "month": 9,
+              "day": 10,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 299
+            },
+            {
+              "text": "October 21",
+              "month": 10,
+              "day": 21,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 361
+            },
+            {
+              "text": "November 17",
+              "month": 11,
+              "day": 17,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 467
+            }
+          ],
+          "future_word_found": true,
+          "kind": "TEXT_CANDIDATE_NOT_VERIFIED",
+          "passage_id": "d1.p15.s1"
+        },
+        {
+          "page": 15,
+          "start": 3249,
+          "text": "rence in San Francisco on September 10. He'll also be giving a keynote at GTC Berlin on October 21. Our earnings call to discuss the results of our third quarter of fiscal 2027 is scheduled for November 17. Thank you for joining us today. Operator, please close the call. ...................................................................................................................................................................................................................................................... Operator: This concludes today's conference call. You may now disconnect.",
+          "dates": [
+            {
+              "text": "September 10",
+              "month": 9,
+              "day": 10,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 26
+            },
+            {
+              "text": "October 21",
+              "month": 10,
+              "day": 21,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 88
+            },
+            {
+              "text": "November 17",
+              "month": 11,
+              "day": 17,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 194
+            }
+          ],
+          "future_word_found": true,
+          "kind": "TEXT_CANDIDATE_NOT_VERIFIED",
+          "passage_id": "d1.p15.s2"
+        }
+      ],
+      "characters_extracted": 63698
+    },
+    {
+      "document_id": "d2",
+      "requested_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+      "title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+      "source_role_claim": "ISSUER",
+      "published_date_claim": "2026-08-26",
+      "source_classification_verified": false,
+      "status": "HTTP_403",
+      "passages": []
+    },
+    {
+      "document_id": "d3",
+      "requested_url": "https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026",
+      "title": "Nvidia Earnings: Updates and Commentary (Aug 2026)",
+      "source_role_claim": "REPORTING",
+      "published_date_claim": "2026-08-26",
+      "source_classification_verified": false,
+      "status": "TEXT_EXTRACTED",
+      "url": "https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026",
+      "sha256": "c97bf00f701dfd3608c5520a476574295c05ad4ff843c0036a15f7fcb3750ad0",
+      "mime": "text/html",
+      "pages_total": 1,
+      "pages_extracted": 1,
+      "text_truncated": false,
+      "header_text": " Nvidia Earnings: Updates and Commentary August 2026 | Kiplinger Kiplinger From $107.88 $24.99 Subscribe to Kiplinger × Search Retirement Retirement Retirement Retirement View all Retirement Annuities Estate Planning Retirement Plans Social Security Medicare Investing Investing Investing Investing View all Investing Stocks ETFs Mutual Funds Bonds Wealth Management AI Taxes Taxes Taxes Taxes View all Taxes Tax Returns Tax Deductions Capital Gains Taxes State Taxes Tax Planning Personal Finance Personal Finance Personal Finance Personal Finance View all Personal Finance Savings Shopping and Deals Credit Cards Insurance Money-saving Banking Life Life Life Life View all Life Places to Live Real ",
+      "passages": [
+        {
+          "page": 1,
+          "start": 2748,
+          "text": "t closes on Wednesday, August 26. The results typically come through around 4:20 pm to 4:30 pm Eastern Standard Time. The release of Nvidia's earnings report will be followed by a conference call that begins at 5 pm EST. 2026-08-25T14:18:46.770Z How will the stock market react to Nvidia's earnings? Wedbush analyst Matt Bryson expects Nvidia to beat top- and bottom-line estimates for its fiscal 2027 second-quarter results and give upbeat fiscal third-quarter guidance on strong hyperscale spending. Bryson also feels the results will be bolstered by \"a supply position we continue to view as the best in the industry at a point where component and",
+          "dates": [
+            {
+              "text": "August 26",
+              "month": 8,
+              "day": 26,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 23
+            }
+          ],
+          "future_word_found": true,
+          "kind": "TEXT_CANDIDATE_NOT_VERIFIED",
+          "passage_id": "d3.p1.s1"
+        },
+        {
+          "page": 1,
+          "start": 11210,
+          "text": "state-of-the-art frontier models. If so, this would certainly shake the AI world, especially as OpenAI and Anthropic seek to maintain their significant growth rates ahead of their upcoming IPOs . - Tom Taulli 2026-08-25T18:11:14.583Z Hedge funds bought NVDA stock in Q2 Nvidia shares slightly underperformed the broader market in Q2, generating a total return (price change plus dividends) of 14.9% vs the S&P 500's 15.2% gain. (Image credit: YCharts) From March 31 through June 30, hedge funds were net buyers of Nvidia stock. According to WhaleWisdom , 86 hedge funds initiated new positions in NVDA and 417 increased their stakes. This compares ",
+          "dates": [
+            {
+              "text": "March 31",
+              "month": 3,
+              "day": 31,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 457
+            },
+            {
+              "text": "June 30",
+              "month": 6,
+              "day": 30,
+              "explicit_year": null,
+              "iso_date": null,
+              "offset": 474
+            }
+          ],
+          "future_word_found": true,
+          "kind": "TEXT_CANDIDATE_NOT_VERIFIED",
+          "passage_id": "d3.p1.s2"
+        }
+      ],
+      "characters_extracted": 50264
+    }
+  ],
+  "notice": "저장 출처에서 추출한 원문 후보입니다. 새 웹 검색·최신 일정 확인·회사 공식성 검증을 수행한 결과가 아닙니다. 연도가 없는 월일은 임의로 연도를 붙이지 않습니다.",
+  "source_leads": [
+    {
+      "url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "role": "ISSUER",
+      "published_date": "2026-08-26",
+      "priority": 0,
+      "from_report": "2026-09-09T16:42:08.233193+00:00",
+      "from_expired_report": true
+    },
+    {
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+      "title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+      "role": "ISSUER",
+      "published_date": "2026-08-26",
+      "priority": 1,
+      "from_report": "2026-09-09T16:42:08.233193+00:00",
+      "from_expired_report": true
+    },
+    {
+      "url": "https://www.kiplinger.com/investing/live/nvidia-earnings-live-updates-and-commentary-august-2026",
+      "title": "Nvidia Earnings: Updates and Commentary (Aug 2026)",
+      "role": "REPORTING",
+      "published_date": "2026-08-26",
+      "priority": 1,
+      "from_report": "2026-09-09T14:35:04.697926+00:00",
+      "from_expired_report": true
+    }
+  ],
+  "old_reports_used_as_urls_only": true
+}

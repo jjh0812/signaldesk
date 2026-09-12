@@ -1,0 +1,7 @@
+# Primary package versions checked 2026-09-09. Transitive versions are recorded after install.
+fastapi==0.141.1
+yfinance==1.7.0
+uvicorn>=0.35,<1
+pandas>=2.2,<3.1
+httpx>=0.28,<1
+tzdata>=2025.2

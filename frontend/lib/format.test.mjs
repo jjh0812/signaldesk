@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {pct, pp, ratio, findExactDate, chartGeometry, seoulTime} from './format.mjs';
+test('missing metrics remain unknown, not zero', () => {assert.equal(pct(null), '—'); assert.equal(ratio(undefined), '—');});
+test('percent and percentage-point labels are distinct', () => {assert.equal(pct(.125), '+12.50%'); assert.equal(pp(-.031), '-3.10%p');});
+test('date inspection does not substitute a nearby trading date', () => {assert.equal(findExactDate([{date:'2026-09-04'}], '2026-09-05'), null);});
+test('single-point chart is finite', () => {const g=chartGeometry([{close:100,date:'2026-01-01'}]);assert.ok(Number.isFinite(g.points[0].y));assert.ok(!g.line.includes('NaN'));});
+test('flat chart is finite', () => {const g=chartGeometry([{close:10},{close:10}]);assert.ok(g.max>g.min);assert.ok(!g.area.includes('NaN'));});
+test('empty chart stays empty', () => {assert.equal(chartGeometry([]).line, '');});
+test('negative and positive coordinates are ordered', () => {const g=chartGeometry([{close:20},{close:40}]);assert.ok(g.points[0].y>g.points[1].y);assert.ok(g.points[0].x<g.points[1].x);});
+test('timestamps include Seoul conversion and handle bad values', () => {assert.equal(seoulTime('bad'), '—'); assert.ok(seoulTime('2026-09-09T00:00:00Z').includes('09:00'));});

@@ -1,0 +1,74 @@
+{
+  "version": "filing-excerpt-pack-1",
+  "documents": [
+    {
+      "symbol": "NVDA",
+      "cik": "1045810",
+      "form": "10-K",
+      "period_end": "2026-01-25",
+      "filing_date": "2026-02-25",
+      "title": "NVIDIA 10-K · period 2026-01-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "id": "e99e5903b9c64fd8a1990b1c",
+      "sha256": "28e1e25cc8378592bddfe57aef99121acabb02c22185571cd8b90512c96cb98b",
+      "hash_scope": "selected excerpt text, NOT original HTML bytes",
+      "scope": "SELECTED_EXCERPTS",
+      "origin": "BUNDLED_REVIEWED_WEB_EXCERPT",
+      "reviewed_on": "2026-09-11",
+      "collected_at": null,
+      "truncated": true,
+      "pages_extracted": null,
+      "passages": [
+        {
+          "topic": "CONTROLS",
+          "text": "our management concluded that our internal control over financial reporting was effective as of January 25, 2026.",
+          "locator": "Item 9A · Management annual assessment",
+          "context_before": "",
+          "context_after": "",
+          "page": null,
+          "truncated": false
+        }
+      ],
+      "note": "짧은 문구를 개발 중 웹 원문과 대조해 포함했습니다. 공시 전체나 최신성 검증이 아닙니다. 주제 분류와 해석은 동일한 규칙 엔진으로 계산합니다."
+    },
+    {
+      "symbol": "NVDA",
+      "cik": "1045810",
+      "form": "10-Q",
+      "period_end": "2026-07-26",
+      "filing_date": "2026-08-26",
+      "title": "NVIDIA 10-Q · period 2026-07-26",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+      "id": "0be38fa89dc55c250d812d77",
+      "sha256": "92d0c112ec111fe967eaff00a1337b113192038325e47414fafa8a9b30c92bbe",
+      "hash_scope": "selected excerpt text, NOT original HTML bytes",
+      "scope": "SELECTED_EXCERPTS",
+      "origin": "BUNDLED_REVIEWED_WEB_EXCERPT",
+      "reviewed_on": "2026-09-11",
+      "collected_at": null,
+      "truncated": true,
+      "pages_extracted": null,
+      "passages": [
+        {
+          "topic": "DEBT",
+          "text": "we issued an aggregate of $25.0 billion of senior unsecured notes",
+          "locator": "Note 9 · Debt (selected clause)",
+          "context_before": "",
+          "context_after": "",
+          "page": null,
+          "truncated": false
+        },
+        {
+          "topic": "GUARANTEES",
+          "text": "Our payment obligations under the guarantees are triggered upon certain tenant defaults",
+          "locator": "Note 10 · SB Energy guarantees (trigger clause only)",
+          "context_before": "",
+          "context_after": "",
+          "page": null,
+          "truncated": false
+        }
+      ],
+      "note": "짧은 문구를 개발 중 웹 원문과 대조해 포함했습니다. 공시 전체나 최신성 검증이 아닙니다. 주제 분류와 해석은 동일한 규칙 엔진으로 계산합니다."
+    }
+  ]
+}

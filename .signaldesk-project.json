@@ -1,0 +1,8 @@
+{
+  "package_id": "signaldesk-thesis-1.2.0",
+  "name": "SignalDesk",
+  "stage": "investment-thesis",
+  "version": "1.2.0",
+  "backend_version": "0.8.1",
+  "ui_build_id": "SD-120-THESIS-ENGINE"
+}

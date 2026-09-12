@@ -1,0 +1,118 @@
+{
+  "version": "source-schedule-0.6.2",
+  "symbol": "NVDA",
+  "research_date": "2026-09-10",
+  "api_calls": 0,
+  "external_requests": 0,
+  "database_writes": 0,
+  "status": "SOURCE_CANDIDATES_AVAILABLE",
+  "source_collected_at": "2026-09-10T05:43:37.209830+00:00",
+  "source_is_expired": false,
+  "candidates": [
+    {
+      "id": "local-002eb5ab8334ebf80610",
+      "category": "EARNINGS",
+      "title": "실적 발표 콘퍼런스콜",
+      "month_day_text": "November 17",
+      "event_date_candidate": "2026-11-17",
+      "year_basis": "CONTEXT_YEAR_CANDIDATE",
+      "year_explanation": "문장에는 월·일만 있습니다. 문서일 2026-08-26와 미래 일정 발언을 바탕으로 2026년을 후보로 연결했습니다. 확정 연도·최신 일정 검증은 아닙니다.",
+      "horizon_state": "UPCOMING",
+      "days_to_candidate": 68,
+      "source_document_date": "2026-08-26",
+      "document_title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "source_url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "downloaded_url": "https://s201.q4cdn.com/141608511/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "document_sha256": "a8be2bac4fd08ca18fc4bccbb165cd48237166ac5b4e211e779fc9f89ee35e16",
+      "page": 15,
+      "passage_id": "d1.p15.s1",
+      "sentence": "Our earnings call to discuss the results of our third quarter of fiscal 2027 is scheduled for November 17",
+      "header_text": " Corrected Transcript 1-877-FACTSET www.callstreet.com Total Pages: 16 Copyright © 2001-2026 FactSet CallStreet, LLC 26-Aug -2026 NVIDIA Corp. (NVDA ) Q2 2027 Earnings Call ",
+      "issuer_authenticity_verified": false,
+      "latest_change_checked": false,
+      "basis": "LOCAL_TEXT_RULE_CANDIDATE",
+      "original_passage_ids": [
+        "d1.p15.s1",
+        "d1.p15.s2"
+      ]
+    },
+    {
+      "id": "local-61eb20eea1000a7d9f37",
+      "category": "CONFERENCE",
+      "title": "Goldman Sachs Communacopia & Technology Conference in San Francisco · 대담",
+      "month_day_text": "September 10",
+      "event_date_candidate": "2026-09-10",
+      "year_basis": "CONTEXT_YEAR_CANDIDATE",
+      "year_explanation": "문장에는 월·일만 있습니다. 문서일 2026-08-26와 미래 일정 발언을 바탕으로 2026년을 후보로 연결했습니다. 확정 연도·최신 일정 검증은 아닙니다.",
+      "horizon_state": "UPCOMING",
+      "days_to_candidate": 0,
+      "source_document_date": "2026-08-26",
+      "document_title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "source_url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "downloaded_url": "https://s201.q4cdn.com/141608511/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "document_sha256": "a8be2bac4fd08ca18fc4bccbb165cd48237166ac5b4e211e779fc9f89ee35e16",
+      "page": 15,
+      "passage_id": "d1.p15.s1",
+      "sentence": "Before we close, please note that Jensen will be participating in a keynote fireside chat at the Goldman Sachs Communacopia & Technology Conference in San Francisco on September 10",
+      "header_text": " Corrected Transcript 1-877-FACTSET www.callstreet.com Total Pages: 16 Copyright © 2001-2026 FactSet CallStreet, LLC 26-Aug -2026 NVIDIA Corp. (NVDA ) Q2 2027 Earnings Call ",
+      "issuer_authenticity_verified": false,
+      "latest_change_checked": false,
+      "basis": "LOCAL_TEXT_RULE_CANDIDATE",
+      "original_passage_ids": [
+        "d1.p15.s1"
+      ]
+    },
+    {
+      "id": "local-3e143fdfdbd5763ceaad",
+      "category": "CONFERENCE",
+      "title": "GTC Berlin · 기조연설",
+      "month_day_text": "October 21",
+      "event_date_candidate": "2026-10-21",
+      "year_basis": "CONTEXT_YEAR_CANDIDATE",
+      "year_explanation": "문장에는 월·일만 있습니다. 문서일 2026-08-26와 미래 일정 발언을 바탕으로 2026년을 후보로 연결했습니다. 확정 연도·최신 일정 검증은 아닙니다.",
+      "horizon_state": "UPCOMING",
+      "days_to_candidate": 41,
+      "source_document_date": "2026-08-26",
+      "document_title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "source_url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "downloaded_url": "https://s201.q4cdn.com/141608511/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "document_sha256": "a8be2bac4fd08ca18fc4bccbb165cd48237166ac5b4e211e779fc9f89ee35e16",
+      "page": 15,
+      "passage_id": "d1.p15.s1",
+      "sentence": "He'll also be giving a keynote at GTC Berlin on October 21",
+      "header_text": " Corrected Transcript 1-877-FACTSET www.callstreet.com Total Pages: 16 Copyright © 2001-2026 FactSet CallStreet, LLC 26-Aug -2026 NVIDIA Corp. (NVDA ) Q2 2027 Earnings Call ",
+      "issuer_authenticity_verified": false,
+      "latest_change_checked": false,
+      "basis": "LOCAL_TEXT_RULE_CANDIDATE",
+      "original_passage_ids": [
+        "d1.p15.s1",
+        "d1.p15.s2"
+      ]
+    }
+  ],
+  "document_checks": [
+    {
+      "title": "TRANSCRIPT - NVIDIA Corp - Q2 2027 Earnings Call (26-Aug-2026)",
+      "status": "TEXT_EXTRACTED",
+      "candidates_found": 3,
+      "reason": "원문 문장과 날짜 후보를 연결했습니다. 최신 변경 공지는 조회하지 않았습니다."
+    },
+    {
+      "title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+      "status": "HTTP_403",
+      "candidates_found": 0,
+      "reason": "본문을 읽지 못한 문서는 후보에 사용하지 않았습니다."
+    },
+    {
+      "title": "Nvidia Earnings: Updates and Commentary (Aug 2026)",
+      "status": "TEXT_EXTRACTED",
+      "candidates_found": 0,
+      "reason": "원문 머리글의 티커 또는 발행사 자료 분류를 확인하지 못해 자동 후보 연결에서 제외했습니다."
+    }
+  ],
+  "notice": "저장 원문에서 규칙으로 연결한 일정 후보입니다. 회사 공식성·연도 추론·변경 여부를 독립 검증한 확정 일정이 아닙니다. AI 조사 결과와 별도로 표시합니다.",
+  "limitations": [
+    "영문 실적콜의 명시적 예정 문장과 행사·기조연설 날짜만 우선 처리합니다. 제품·규제·계약 일정 전량 추출 기능은 아닙니다.",
+    "연도는 행사 문장의 직접 표기 또는 문서 머리글의 달력 날짜를 사용합니다. 회계연도를 행사 연도로 사용하지 않습니다."
+  ]
+}
