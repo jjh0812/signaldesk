@@ -179,7 +179,7 @@ def check(root: Path, timeout: float = 30) -> dict:
             try:
                 logs = root / 'logs'
                 logs.mkdir(exist_ok=True)
-                (logs / 'runtime-check-120.json').write_text(
+                (logs / 'runtime-check-130.json').write_text(
                     json.dumps(record, ensure_ascii=True, indent=2), encoding='utf-8')
             except OSError:
                 pass  # Log disk errors don't disguise the actual check result.

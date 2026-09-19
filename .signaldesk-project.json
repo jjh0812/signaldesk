@@ -1,8 +1,8 @@
 {
-  "package_id": "signaldesk-thesis-1.2.0",
+  "package_id": "signaldesk-forward-1.3.0",
   "name": "SignalDesk",
-  "stage": "investment-thesis",
-  "version": "1.2.0",
+  "stage": "forward-catalysts",
+  "version": "1.3.0",
   "backend_version": "0.8.1",
-  "ui_build_id": "SD-120-THESIS-ENGINE"
+  "ui_build_id": "SD-130-FORWARD-CATALYSTS"
 }

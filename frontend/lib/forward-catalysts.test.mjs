@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {forwardInsight} from './forward-catalysts.mjs';
+import {selectBoardEvents} from './signals.mjs';
+const report={sources:[{id:'s1',url:'https://example.com/official',title:'Synthetic source'}]};
+const event={title:'Synthetic product event',category:'PRODUCT',eventDate:'2026-09-25',ai:{source_ids:['s1'],timing:'ANNOUNCED_DATE',positive_condition:'실제 유료 고객 계약과 제품 인도 일정이 확인되면 사업 근거가 강해진다.',negative_condition:'공식적인 인도 지연 또는 주요 고객 계약 취소가 확인되면 부담이다.',why_it_matters:'시험 회사의 매출 인식 시점에 영향을 준다.',watch:'회사 발표의 실제 인도 수량을 확인한다.',importance:'HIGH',importance_reason:'공식 인도 일정과 매출 연결을 판단한다.'}};
+test('sourced company conditions override category education',()=>{const x=forwardInsight(event,report);assert.equal(x.positive,event.ai.positive_condition);assert.equal(x.watch,event.ai.watch);assert.equal(x.importance,'HIGH');});
+test('unlinked facts are never promoted',()=>{const x=forwardInsight(event,{sources:[]});assert.equal(x.watch,'');assert.equal(x.importance,null);assert.notEqual(x.positive,event.ai.positive_condition);});
+test('conflicting dates suppress company scenario',()=>{const x=forwardInsight({...event,conflict:true},report);assert.equal(x.watch,'');assert.notEqual(x.positive,event.ai.positive_condition);});
+test('return predictions are not company conditions',()=>{const x=forwardInsight({...event,ai:{...event.ai,positive_condition:'이 발표가 나오면 무조건 50% 상승할 것입니다.'}},report);assert.notEqual(x.positive,'이 발표가 나오면 무조건 50% 상승할 것입니다.');});
+test('past events excluded from forward list',()=>assert.equal(selectBoardEvents({entries:[{...event,eventDate:'2026-09-01'}]},'all','2026-09-19').length,0));
+test('unknown dates excluded from 30 day bucket',()=>assert.equal(selectBoardEvents({entries:[{...event,eventDate:null}]},30,'2026-09-19').length,0));
+test('unknown dates remain in unknown bucket',()=>assert.equal(selectBoardEvents({entries:[{...event,eventDate:null}]},'unknown','2026-09-19').length,1));
+test('events outside horizon excluded',()=>assert.equal(selectBoardEvents({entries:[{...event,eventDate:'2027-09-19'}]},'all','2026-09-19').length,0));
+test('announced date preserved',()=>assert.equal(forwardInsight(event,report).timing,'ANNOUNCED_DATE'));

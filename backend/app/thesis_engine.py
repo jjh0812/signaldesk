@@ -19,7 +19,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, ValidationError
 
 from . import research as research_module
 from .research import ResearchError, read_settings
-from .dilution_watch import WatchStore, age, day, stamp
+from .watch_store import WatchStore, age, day, stamp
 from .stock_drivers import canonical_url
 
 VERSION = 'thesis-engine-1.2.0'

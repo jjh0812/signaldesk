@@ -133,9 +133,21 @@ class ExportTests(unittest.TestCase):
 
     def test_missing_source_action_rejected(self):
         p = self.root / 'frontend/components/StockWatch.jsx'
-        p.write_text(p.read_text(encoding='utf-8').replace('sd-dilution-scan-action', 'absent'), encoding='utf-8')
+        p.write_text(p.read_text(encoding='utf-8').replace('sd-stock-drivers-action', 'absent'), encoding='utf-8')
         with self.assertRaisesRegex(RuntimeError, 'Stock Watch UI'):
             validate_export(self.root, stamp=True)
+
+    def test_reintroduced_sec_panel_rejected(self):
+        p = self.root / 'frontend/components/StockWatch.jsx'
+        p.write_text(p.read_text(encoding='utf-8') + '\n// /api/v1/watch/dilution', encoding='utf-8')
+        with self.assertRaises(RuntimeError):
+            validate_source(self.root)
+
+    def test_missing_forward_action_rejected(self):
+        p = self.root / 'frontend/components/DeskOverview.jsx'
+        p.write_text(p.read_text(encoding='utf-8').replace('sd-forward-catalysts-action', 'missing'), encoding='utf-8')
+        with self.assertRaisesRegex(RuntimeError, 'Forward catalyst'):
+            validate_source(self.root)
 
     def test_disconnected_component_rejected(self):
         p = self.root / 'frontend/app/page.jsx'

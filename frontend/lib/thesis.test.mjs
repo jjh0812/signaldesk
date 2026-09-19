@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {thesisItems,hasThesisBlock,draftForSymbol,cooldownSeconds,formatCooldown,canResumeDraft,canAutoScan,matchingWatchState} from './stock-watch.mjs';
+import {thesisItems,hasThesisBlock,draftForSymbol,canResumeDraft,matchingWatchState} from './stock-watch.mjs';
 const doc={symbol:'TEST',version:'thesis-engine-1.2.0',identity_confirmed:true,bottlenecks:[{title:'linked',sources:[{url:'https://example.com'}],milestone_status:'CONDITIONAL'}]};
 test('thesis wrong issuer is never shown',()=>assert.deepEqual(thesisItems(doc,'OTHER'),[]));
 test('old driver result is not a new thesis',()=>assert.deepEqual(thesisItems({...doc,version:'stock-drivers-1.1.0'},'TEST'),[]));
@@ -11,8 +11,4 @@ test('null or uncited summary is not filled with a template',()=>{assert.equal(h
 test('valid summary rendered',()=>assert.equal(hasThesisBlock({text:'supported',sources:[{}]}),true));
 test('wrong company draft rejected',()=>assert.equal(draftForSymbol({symbol:'OTHER',version:doc.version},'TEST'),null));
 test('nested wrong company draft rejected',()=>assert.equal(matchingWatchState({symbol:'TEST',research_draft:{symbol:'OTHER',version:doc.version}},'TEST').research_draft,null));
-test('unknown cooldown not misreported zero minute guarantee',()=>assert.equal(cooldownSeconds({retry_at_epoch:'bad'}),0));
-test('cooldown uses a time not decrement counter',()=>{assert.equal(cooldownSeconds({retry_at_epoch:1000},900000),100);assert.equal(cooldownSeconds({retry_at_epoch:1000},1100000),0);});
-test('readable remaining wait time',()=>assert.equal(formatCooldown(602),'10분 02초'));
-test('auto checks paused during cooldown',()=>assert.equal(canAutoScan({enabled:true,visible:true,working:'',externalBusy:false,serverBusy:false,contactConfigured:true,cooldown:1}),false));
 test('resume requires same date and live draft',()=>{const d={symbol:'TEST',version:doc.version,can_resume:true,stale:false,research_date:'2026-09-12'};assert.equal(canResumeDraft(d,'TEST','2026-09-12'),true);assert.equal(canResumeDraft({...d,stale:true},'TEST','2026-09-12'),false);assert.equal(canResumeDraft(d,'TEST','2026-09-13'),false);});

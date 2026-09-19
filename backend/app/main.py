@@ -25,14 +25,14 @@ from .price_context import build_price_context
 ROOT = Path(__file__).resolve().parents[2]
 provider = YahooProvider(ROOT / ".cache" / "market")
 research = ResearchService(ROOT)
-RELEASE_VERSION = "1.2.0"
-UI_BUILD_ID = "SD-120-THESIS-ENGINE"
+RELEASE_VERSION = "1.3.0"
+UI_BUILD_ID = "SD-130-FORWARD-CATALYSTS"
 BACKEND_COMPAT_VERSION = "0.6.2"
 
 app = FastAPI(
     title="SignalDesk",
     version=BACKEND_COMPAT_VERSION,
-    description="Local US equity research: price anomalies, events, company-specific drivers and bounded SEC dilution signals.",
+    description="Local US equity research: price anomalies, events, company-specific thesis and source-linked forward catalysts.",
 )
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "testserver"])
 
@@ -243,6 +243,9 @@ install_decision_routes(app, ROOT, research)
 
 from .watch_api import install_routes as install_watch_routes
 install_watch_routes(app, ROOT, research, validate_ai_request)
+
+from .catalyst_api import install_routes as install_catalyst_routes
+install_catalyst_routes(app, ROOT, research, validate_ai_request)
 
 # Unrecognized API routes must not fall through to an HTML page.
 @app.get("/api/{unmatched:path}")

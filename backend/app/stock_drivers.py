@@ -16,7 +16,7 @@ from urllib.parse import urlsplit, urlunsplit
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, ValidationError
 
 from . import research as research_module
-from .dilution_watch import WatchStore, age, day, stamp
+from .watch_store import WatchStore, age, day, stamp
 from .research import ResearchError, public_url, read_settings
 
 VERSION = 'stock-drivers-1.1.0'

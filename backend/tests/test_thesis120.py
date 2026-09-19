@@ -15,7 +15,7 @@ from app.research import ResearchService, ResearchError, Settings
 from app.provider import ProviderError
 from app.thesis_engine import (ThesisService, ThesisDocument, research_request, normalize_request,
                               research_packet, parse_thesis, VERSION, _packet_hash)
-from app.dilution_watch import WatchStore, SecClient, stamp
+from app.watch_store import WatchStore, stamp
 from app.watch_api import install_routes
 
 DAY=datetime.now(ZoneInfo('America/New_York')).date().isoformat()
@@ -228,7 +228,7 @@ class ServiceTests(unittest.TestCase):
   self.svc.store.save('drivers-DCTX.json',{'sentinel':'old'});self.execute();self.assertEqual(self.svc.store.read('drivers-DCTX.json'),{'sentinel':'old'})
  def test_no_sec_request_needed_for_thesis(self):
   self.svc.store.save('cooldown.json',{'until':999999999})
-  with patch.object(SecClient,'get',side_effect=AssertionError('SEC')):r,_=self.execute();self.assertEqual(r['status'],'READY')
+  r,_=self.execute();self.assertEqual(r['status'],'READY')
  def test_second_budget_limit_keeps_research(self):
   with patch.object(self.research,'_reserve_attempt',side_effect=[None,ResearchError('LOCAL_DAILY_LIMIT','limit',429)]):
    r,c=self.execute([web_raw()]);self.assertEqual(c.call_count,1);self.assertEqual(r['status'],'STRUCTURE_FAILED');self.assertEqual(r['ai_calls'],1)
@@ -250,13 +250,12 @@ class NewAPITests(unittest.TestCase):
   with patch('app.research.call_openai',side_effect=AssertionError):
    r=self.client.post('/api/v1/watch/drivers',headers=self.headers,json={'snapshot_id':'a'*24,'allow_paid':True,'refresh':True});self.assertEqual(r.status_code,400)
  def test_state_get_no_network_and_no_email(self):
-  self.app.state.dilution_watch.store.set_contact('private@example.com')
-  with patch.object(SecClient,'get',side_effect=AssertionError):
-   r=self.client.get('/api/v1/watch/state?symbol=DCTX');self.assertEqual(r.status_code,200);self.assertNotIn('private@example',r.text);self.assertIn('sec_cooldown',r.json());self.assertEqual(r.json()['ai_calls'],0)
- def test_cooldown_exposes_only_wait_and_status(self):
-  import time
-  self.app.state.dilution_watch.store.save('cooldown.json',{'until':time.time()+600,'http_status':403,'secret':'never-show'})
-  r=self.client.get('/api/v1/watch/state?symbol=DCTX');self.assertEqual(r.json()['sec_cooldown']['http_status'],403);self.assertNotIn('never-show',r.text)
+  self.app.state.stock_drivers.store.save('contact.json',{'email':'private@example.com'})
+  with patch('app.research.call_openai',side_effect=AssertionError('paid call')):
+   r=self.client.get('/api/v1/watch/state?symbol=DCTX');self.assertEqual(r.status_code,200);self.assertNotIn('private@example',r.text);self.assertNotIn('sec_cooldown',r.json());self.assertEqual(r.json()['ai_calls'],0)
+ def test_old_cooldown_not_exposed(self):
+  self.app.state.stock_drivers.store.save('cooldown.json',{'until':9999999999,'http_status':403,'secret':'never-show'})
+  r=self.client.get('/api/v1/watch/state?symbol=DCTX');self.assertNotIn('sec_cooldown',r.json());self.assertNotIn('never-show',r.text)
  def test_unsafe_symbol_rejected(self):self.assertNotEqual(self.client.get('/api/v1/watch/state?symbol=../../.env').status_code,200)
 
 if __name__=='__main__':unittest.main()
